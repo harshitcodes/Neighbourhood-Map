@@ -1,0 +1,24 @@
+{
+  "name": "Neighbourhood Map",
+  "authors": [
+    "harshitcodes <harshit.bvcoe@gmail.com>"
+  ],
+  "description": "Lists all my favorite places.",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "^3.4.0",
+    "oauth-js": "oauthio-web#^0.5.2",
+    "jquery": "^3.1.1",
+    "js-sha1": "^0.3.0",
+    "bootstrap": "^3.3.7"
+  }
+}
