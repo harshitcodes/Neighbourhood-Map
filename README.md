@@ -33,7 +33,9 @@ and then
 npm install
 ```
 now run
-```gulp```
+```
+gulp
+```
 That's it the application would start running in your web browser.
 
 ## Resources:
