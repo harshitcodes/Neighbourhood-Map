@@ -119,8 +119,7 @@ var nhoodMap = nhoodMap || {};
     displayInfoWindowLinks();
   };
 
-  // Add a header line to the InfoWindow that can be used to
-  // Show/Hide the data from Yelp and Foursquare
+  // Show/Hide the data from Foursquare
   function displayInfoWindowLinks() {
     var formattedContent = '<div class="iw-links"></div>';
     $(".iw-main").prepend(formattedContent);

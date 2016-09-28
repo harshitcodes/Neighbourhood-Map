@@ -23,7 +23,7 @@
           Neighbourhood Map
       </h1>
       <div class="header-menu" data-bind="click: toggleListVisible">
-        <span id="nav-icon" style="color: white; font-size: 30px; cursor:pointer" onclick="openNav()">☰</span>
+        <span id="nav-icon" style="color: white; font-size: 30px; cursor:pointer">☰</span>
       </div>
       <!-- <div class="header-menu" data-bind="click: toggleListVisible">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@
   <script src="js/viewModel.js" defer></script>
   <script src="js/mapManip.js" defer></script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqDEydjao3Nm4nOwOP92qGQ3Y0FM_tCc&region=GB&callback=nhoodMap.mapManip.initMap" defer onerror="nhoodMap.viewModel.ViewModel.mapError()">
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqDEydjao3Nm4nOwOP92qGQ3Y0FM_tCc&region=GB&callback=nhoodMap.mapManip.initMap"  defer onerror="nhoodMap.viewModel.ViewModel.mapError()">
   </script>
  </body>
 
