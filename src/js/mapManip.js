@@ -110,7 +110,7 @@ var nhoodMap = nhoodMap || {};
     }
     toggleBounce(marker);
     // Create initial content for InfoWindow and then open the InfoWindow for the Marker
-    var formattedContent = '<div class="iw-main"></div>';
+    var formattedContent = '<div class="tt-main"></div>';
     infoWindow.setContent(formattedContent);
     infoWindow.open(map, marker);
     // are handled by the yelpSuccess and foursquareSuccess callback functions
@@ -120,17 +120,17 @@ var nhoodMap = nhoodMap || {};
 
   // Show/Hide the data from Foursquare
   function displayInfoWindowLinks() {
-    var formattedContent = '<div class="iw-links"></div>';
-    $(".iw-main").prepend(formattedContent);
-    formattedContent += '<span class="iw-foursquare">Foursquare: </span>';
-    formattedContent += '<span class="iw-foursquare-vis">hide</span>';
-    $(".iw-links").append(formattedContent);
-    $(".iw-foursquare-vis").on("click", function(e) {
+    var formattedContent = '<div class="tt-links"></div>';
+    $(".tt-main").prepend(formattedContent);
+    formattedContent += '<span class="tt-foursquare">Foursquare: </span>';
+    formattedContent += '<span class="tt-foursquare-vis">hide</span>';
+    $(".tt-links").append(formattedContent);
+    $(".tt-foursquare-vis").on("click", function(e) {
       if (e.target.innerHTML === "show") {
-        $(".iw-foursquare-data").show();
+        $(".tt-foursquare-data").show();
         e.target.innerHTML = "hide";
       } else {
-        $(".iw-foursquare-data").hide();
+        $(".tt-foursquare-data").hide();
         e.target.innerHTML = "show";
       }
     });
@@ -146,26 +146,26 @@ var nhoodMap = nhoodMap || {};
       imgUrl: venue.bestPhoto.prefix + '100x100' + venue.bestPhoto.suffix,
       address: venue.location.formattedAddress || "None"
     };
-    var formattedContent = '<div class="iw-foursquare-data">';
-    formattedContent += '<div class="iw-header">';
-    formattedContent += '<h3 class="iw-header-h3">' + content.name + '</h3></div>';
-    formattedContent += '<div class="iw-data"><div class="iw-picture"><img src="' + content.imgUrl + '" ';
+    var formattedContent = '<div class="tt-foursquare-data">';
+    formattedContent += '<div class="tt-header">';
+    formattedContent += '<h3 class="tt-header-h3">' + content.name + '</h3></div>';
+    formattedContent += '<div class="tt-data"><div class="tt-picture"><img src="' + content.imgUrl + '" ';
     formattedContent += 'alt="Picture from foursquare"></div>';
-    formattedContent += '<div class="iw-detail"><ul class="iw-detail-ul">';
-    formattedContent += '<li class="iw-detail-li">Category: ' + content.category + '</li>';
-    formattedContent += '<li class="iw-detail-li">Phone: ' + content.phone + '</li>';
-    formattedContent += '<li class="iw-detail-li">Address: ' + content.address + '</li>';
+    formattedContent += '<div class="tt-detail"><ul class="tt-detail-ul">';
+    formattedContent += '<li class="tt-detail-li">Category: ' + content.category + '</li>';
+    formattedContent += '<li class="tt-detail-li">Phone: ' + content.phone + '</li>';
+    formattedContent += '<li class="tt-detail-li">Address: ' + content.address + '</li>';
     formattedContent += '</ul></div></div></div>';
-    $(".iw-main").append(formattedContent);
+    $(".tt-main").append(formattedContent);
   }
 
   // displaying error messages
   // if data can not be retrieved or Foursquare APIs
   function requestFailed(data) {
     var formattedContent;
-    formattedContent = '<div class="iw-foursquare-data">';
+    formattedContent = '<div class="tt-foursquare-data">';
     formattedContent += '<p>Failed to retrieve data from ' + data + '</p></div>';
-    $(".iw-main").append(formattedContent);
+    $(".tt-main").append(formattedContent);
   }
 
 })(nhoodMap);

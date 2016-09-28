@@ -23,7 +23,7 @@ var nhoodMap = nhoodMap || {};
         self.mapError = function() {
             self.headerVisible(false);
             self.mapErrorVisible(true);
-            self.mapErrorMsg("<p>Error encountered with Google Maps API.<br>Please refresh or try again later.</p>");
+            self.mapErrorMsg("<p>Error loading the Google Maps API.<br>Please refresh or try again later.</p>");
         };
 
         // List view. Not visible to start with
