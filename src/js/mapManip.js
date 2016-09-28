@@ -27,8 +27,7 @@ var nhoodMap = nhoodMap || {};
       }
     });
 
-    // Create an overlay so that we can use it later to get
-    // pixel locations of markers
+    // overlay to get pxl location
     overlay = new google.maps.OverlayView();
     overlay.draw = function() {};
     overlay.setMap(map);
@@ -60,7 +59,7 @@ var nhoodMap = nhoodMap || {};
         e.mapManip.getData(place);
       });
 
-      // Create LatLng object from place position and use it to extend the map bounds
+      // Create LatLng object from place and get it extended.
       markerLatLng = new google.maps.LatLng(place.location.lat, place.location.lng);
       bounds.extend(markerLatLng);
     });
@@ -160,15 +159,11 @@ var nhoodMap = nhoodMap || {};
     $(".iw-main").append(formattedContent);
   }
 
-  // Callback function to display error message in InfoWindow
-  // if data can not be retrieved via Yelp or Foursquare APIs
+  // displaying error messages
+  // if data can not be retrieved or Foursquare APIs
   function requestFailed(data) {
     var formattedContent;
-    if (data === "Yelp") {
-      formattedContent = '<div class="iw-yelp-data">';
-    } else {
-      formattedContent = '<div class="iw-foursquare-data">';
-    }
+    formattedContent = '<div class="iw-foursquare-data">';
     formattedContent += '<p>Failed to retrieve data from ' + data + '</p></div>';
     $(".iw-main").append(formattedContent);
   }
